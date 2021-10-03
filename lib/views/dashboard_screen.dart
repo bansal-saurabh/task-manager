@@ -30,6 +30,14 @@ class _DashboardScreenState extends State<DashboardScreen> {
           )
         ],
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: const Icon(Icons.add),
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -53,38 +61,38 @@ class _DashboardScreenState extends State<DashboardScreen> {
           )
         ],
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        iconSize: 30,
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
-        selectedItemColor: Colors.purple,
-        unselectedItemColor: Colors.black26,
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home_filled),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.calendar_today),
-            label: 'Calender',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.add_box_rounded),
-            label: 'Add Task',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person_outline),
-            label: 'Profile',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings_outlined),
-            label: 'Settings',
-          ),
-          FloatingActionButton(onPressed: () {}),
-        ],
-        currentIndex: _selectedIndex,
-        onTap: _onItemTapped,
+      bottomNavigationBar: BottomAppBar(
+        shape: const CircularNotchedRectangle(),
+        child: Row(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            IconButton(
+              iconSize: 30.0,
+              tooltip: 'Home',
+              icon: const Icon(Icons.home_filled),
+              onPressed: () {},
+            ),
+            IconButton(
+              iconSize: 30.0,
+              tooltip: 'Calender',
+              icon: const Icon(Icons.calendar_today),
+              onPressed: () {},
+            ),
+            IconButton(
+              iconSize: 30.0,
+              tooltip: 'Profile',
+              icon: const Icon(Icons.person_outline),
+              onPressed: () {},
+            ),
+            IconButton(
+              iconSize: 30.0,
+              tooltip: 'Settings',
+              icon: const Icon(Icons.settings_outlined),
+              onPressed: () {},
+            ),
+          ],
+        ),
       ),
     );
   }
