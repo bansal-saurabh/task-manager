@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
+import 'home_screen.dart';
+
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({Key? key}) : super(key: key);
 
@@ -32,61 +34,46 @@ class _DashboardScreenState extends State<DashboardScreen> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
+        tooltip: 'Add Task',
         child: const Icon(Icons.add),
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(10.0)),
-        ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          const Center(
-            child: Text('Welcome to Easy To-Do App'),
-          ),
-          const SizedBox(height: 20),
-          ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              primary: Colors.blue,
-              padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
-              textStyle: const TextStyle(
-                fontSize: 14,
-              ),
-            ),
-            onPressed: () {
-              // Get.to(() => const AddToDoScreen());
-            },
-            child: const Text('Add a To-Do'),
-          )
-        ],
-      ),
+      body: const HomeScreen(),
       bottomNavigationBar: BottomAppBar(
         shape: const CircularNotchedRectangle(),
+        notchMargin: 8.0,
         child: Row(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             IconButton(
+              padding: const EdgeInsets.all(15.0),
               iconSize: 30.0,
+              color: Colors.black38,
               tooltip: 'Home',
               icon: const Icon(Icons.home_filled),
               onPressed: () {},
             ),
             IconButton(
+              padding: const EdgeInsets.all(15.0),
               iconSize: 30.0,
+              color: Colors.black38,
               tooltip: 'Calender',
               icon: const Icon(Icons.calendar_today),
               onPressed: () {},
             ),
             IconButton(
+              padding: const EdgeInsets.all(15.0),
               iconSize: 30.0,
+              color: Colors.black38,
               tooltip: 'Profile',
               icon: const Icon(Icons.person_outline),
               onPressed: () {},
             ),
             IconButton(
+              padding: const EdgeInsets.all(15.0),
               iconSize: 30.0,
+              color: Colors.black38,
               tooltip: 'Settings',
               icon: const Icon(Icons.settings_outlined),
               onPressed: () {},
